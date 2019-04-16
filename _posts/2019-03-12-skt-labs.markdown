@@ -122,6 +122,58 @@ for commit in historyData:
 
 print "Project beginning ", minDate
 print "Project ending ", maxDate
-
 ```
 
+Измененные файлы в коммитах можно посмотреть с помощью флага `-p` команды `git log`.
+Этот флаг выводит изменения в коммите или diff коммита.
+Пример вывода показан ниже.
+
+``` diff
+diff --git a/googletest/include/gtest/gtest.h b/googletest/include/gtest/gtest.h
+index 5046f7dd..5211a20b 100644
+--- a/googletest/include/gtest/gtest.h
++++ b/googletest/include/gtest/gtest.h
+@@ -52,9 +52,11 @@
+ #ifndef GTEST_INCLUDE_GTEST_GTEST_H_
+ #define GTEST_INCLUDE_GTEST_GTEST_H_
+ 
++#include <cstddef>
+ #include <limits>
+```
+
+Путь к измененному файлу показан в 3 и 4 строке.
+Наша задача - вытащить эту информацию из текстового файла.
+Это можно сделать с помощью следующей программы:
+
+``` python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import re
+
+# git log -p > out.txt
+
+historyFileName = 'out.txt'
+
+# Регулярное выражение ищет строки, начинающие или с '--- a/' или с '+++ b/'
+# и выделяет в таких строках две группы - указанное шаблонное начало и вся
+# остальная строка.
+pattern = re.compile('^(?:--- a/|\+\+\+ b/)([\S]*)$')
+
+with open(historyFileName,'rt') as file:
+    while True:
+        line = file.readline()
+
+        if len(line) == 0:
+            break
+        
+        out = pattern.match( line )     
+
+        if not out:
+            continue
+
+        # Вторая группа в анализируемой строке - путь к файлу
+        # относительно директории проекта.
+        print out.group(1)
+
+```
