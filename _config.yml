@@ -28,6 +28,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
+yandex_metrika: 92989892
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
