@@ -1,0 +1,9 @@
+---
+layout: post
+title: Учебные материалы
+---
+
+Электронные учебные материалы:
+* [Командная строка в Linux](wolodyx.github.io/unixshell)
+* [Введение в Git](wolodyx.github.io/git-intro)
+
