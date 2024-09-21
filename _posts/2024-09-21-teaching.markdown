@@ -4,6 +4,6 @@ title: Учебные материалы
 ---
 
 Электронные учебные материалы:
-* [Командная строка в Linux](wolodyx.github.io/unixshell)
-* [Введение в Git](wolodyx.github.io/git-intro)
+* [Командная строка в Linux]({% link unixshell %})
+* [Введение в Git]({% git-intro %})
 
