@@ -53,7 +53,7 @@ You can find out more about the results of my work [here]({% link work-activity/
   In 2009, I was approached with a request to help automate the uploading of images from remote CCTV cameras.
   The cameras that were purchased were equipped with a basic graphics program, which allowed for only simple user operations.
   The manufacturer was unwilling to expand the functionality of the program, but they did provide documentation on the protocol.
-  I have created a program that interfaces with the camera using a GPS modem.
+  I have created a program that interfaces with the camera using a GPRS modem.
   The program connects to the camera periodically and uploads the image to a local folder.
   The graphical portion of the program is built on the wxWidgets framework, while the ffmpeg library is used to convert the video stream from H.264 to JPEG.
   This program is used to monitor the conditions of a section of the M7 Federal Highway.
