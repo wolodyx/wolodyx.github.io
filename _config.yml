@@ -20,5 +20,5 @@ commonmark:
 
 yandex_metrika: 92989892
 
-header_pages: ["about.md"]
-
+header_pages:
+  - about-en.md
